@@ -19,6 +19,7 @@ from crypto_quant_stat.aggregate.cryoto_quant.classify_indicator_utxo import Cla
 from crypto_quant_stat.utils import constants
 from crypto_quant_stat.utils.cs_config import CSConfig
 from crypto_quant_stat.utils.db_utils import get_output
+import cs_bitcoin_model as cs_bitcoin_model
 
 
 class AggregateCryptoQuanIndicator:
@@ -45,6 +46,7 @@ class AggregateCryptoQuanIndicator:
         self.headers = {'Authorization': 'Bearer ' + key}
         self.result = {}
         self.raw_value = raw_value
+        print(cs_bitcoin_model.constants.Coefficient)
         super()
 
     def create_result(self, running_date):
